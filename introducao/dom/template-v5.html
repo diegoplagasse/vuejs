@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- v-once carrega uma unica vez e depois msm se os dados  atributo titulo seja atualizado ele nao irá mais mudar-->
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VUE JS',
+            link: 'http://google.com.br'
+        },
+        methods: {
+            saudacao: function(){
+                
+                this.titulo = "Bom dia!"
+                return this.titulo
+            }
+        }
+    })
+</script>
